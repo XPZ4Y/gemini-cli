@@ -45,6 +45,7 @@ describe('GlobTool', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => rootDir,
       getWorkspaceContext: () => workspaceContext,
       getFileService: () => fileDiscovery,

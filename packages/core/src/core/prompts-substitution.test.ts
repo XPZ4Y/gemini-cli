@@ -21,6 +21,7 @@ describe('Core System Prompt Substitution', () => {
     vi.resetAllMocks();
     vi.stubEnv('GEMINI_SYSTEM_MD', 'true');
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getToolRegistry: vi.fn().mockReturnValue({
         getAllToolNames: vi
           .fn()

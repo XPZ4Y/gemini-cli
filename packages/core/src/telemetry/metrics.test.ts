@@ -220,6 +220,7 @@ describe('Telemetry Metrics', () => {
 
   describe('initializeMetrics', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -268,6 +269,7 @@ describe('Telemetry Metrics', () => {
 
   describe('recordTokenUsageMetrics', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -311,6 +313,7 @@ describe('Telemetry Metrics', () => {
 
   describe('recordLinesChanged metric', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -358,6 +361,7 @@ describe('Telemetry Metrics', () => {
 
   describe('recordFileOperationMetric', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -442,6 +446,7 @@ describe('Telemetry Metrics', () => {
 
   describe('recordModelRoutingMetrics', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -523,6 +528,7 @@ describe('Telemetry Metrics', () => {
 
   describe('recordAgentRunMetrics', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -583,6 +589,7 @@ describe('Telemetry Metrics', () => {
 
   describe('OpenTelemetry GenAI Semantic Convention Metrics', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;
@@ -773,6 +780,7 @@ describe('Telemetry Metrics', () => {
 
   describe('Performance Monitoring Metrics', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;

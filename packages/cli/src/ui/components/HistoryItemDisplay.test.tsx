@@ -22,7 +22,9 @@ vi.mock('./messages/ToolGroupMessage.js', () => ({
 }));
 
 describe('<HistoryItemDisplay />', () => {
-  const mockConfig = {} as unknown as Config;
+  const mockConfig = {
+    getDisableLoopDetection: () => false,
+  } as unknown as Config;
   const baseItem = {
     id: 1,
     timestamp: 12345,

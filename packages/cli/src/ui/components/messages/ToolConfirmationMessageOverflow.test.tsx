@@ -40,6 +40,7 @@ describe('ToolConfirmationMessage Overflow', () => {
   });
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     isTrustedFolder: () => true,
     getIdeMode: () => false,
     getMessageBus: () => ({

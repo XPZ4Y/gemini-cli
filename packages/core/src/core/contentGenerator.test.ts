@@ -28,6 +28,7 @@ vi.mock('./apiKeyCredentialStorage.js', () => ({
 vi.mock('./fakeContentGenerator.js');
 
 const mockConfig = {
+  getDisableLoopDetection: () => false,
   getModel: vi.fn().mockReturnValue('gemini-pro'),
   getProxy: vi.fn().mockReturnValue(undefined),
   getUsageStatisticsEnabled: vi.fn().mockReturnValue(true),
@@ -118,6 +119,7 @@ describe('createContentGenerator', () => {
 
   it('should create a GoogleGenAI content generator', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => true,
@@ -186,6 +188,7 @@ describe('createContentGenerator', () => {
 
   it('should include custom headers from GEMINI_CLI_CUSTOM_HEADERS for GoogleGenAI requests without inferring auth mechanism', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -233,6 +236,7 @@ describe('createContentGenerator', () => {
 
   it('should pass api key as Authorization Header when GEMINI_API_KEY_AUTH_MECHANISM is set to bearer', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -267,6 +271,7 @@ describe('createContentGenerator', () => {
 
   it('should not pass api key as Authorization Header when GEMINI_API_KEY_AUTH_MECHANISM is not set (default behavior)', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -310,6 +315,7 @@ describe('createContentGenerator', () => {
 
   it('should create a GoogleGenAI content generator with client install id logging disabled', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getUsageStatisticsEnabled: () => false,
       getPreviewFeatures: vi.fn().mockReturnValue(false),
@@ -341,6 +347,7 @@ describe('createContentGenerator', () => {
 
   it('should pass apiVersion to GoogleGenAI when GOOGLE_GENAI_API_VERSION is set', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -375,6 +382,7 @@ describe('createContentGenerator', () => {
 
   it('should not include apiVersion when GOOGLE_GENAI_API_VERSION is not set', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -413,6 +421,7 @@ describe('createContentGenerator', () => {
 
   it('should not include apiVersion when GOOGLE_GENAI_API_VERSION is an empty string', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -452,6 +461,7 @@ describe('createContentGenerator', () => {
 
   it('should pass apiVersion for Vertex AI when GOOGLE_GENAI_API_VERSION is set', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getProxy: vi.fn().mockReturnValue(undefined),
       getUsageStatisticsEnabled: () => false,
@@ -488,6 +498,7 @@ describe('createContentGenerator', () => {
 
 describe('createContentGeneratorConfig', () => {
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getModel: vi.fn().mockReturnValue('gemini-pro'),
     setModel: vi.fn(),
     flashFallbackHandler: vi.fn(),

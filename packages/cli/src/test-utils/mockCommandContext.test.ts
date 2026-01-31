@@ -40,6 +40,7 @@ describe('createMockCommandContext', () => {
   it('should apply deeply nested overrides correctly', () => {
     // This is the most important test for factory's logic.
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getProjectRoot: () => '/test/project',
       getModel: () => 'gemini-pro',
     };

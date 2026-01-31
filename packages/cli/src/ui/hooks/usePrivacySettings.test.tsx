@@ -23,7 +23,9 @@ vi.mock('@google/gemini-cli-core', async (importOriginal) => {
 });
 
 describe('usePrivacySettings', () => {
-  const mockConfig = {} as unknown as Config;
+  const mockConfig = {
+    getDisableLoopDetection: () => false,
+  } as unknown as Config;
 
   beforeEach(() => {
     vi.clearAllMocks();

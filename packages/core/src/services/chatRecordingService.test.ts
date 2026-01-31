@@ -38,6 +38,7 @@ describe('ChatRecordingService', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: vi.fn().mockReturnValue('test-session-id'),
       getProjectRoot: vi.fn().mockReturnValue('/test/project/root'),
       storage: {

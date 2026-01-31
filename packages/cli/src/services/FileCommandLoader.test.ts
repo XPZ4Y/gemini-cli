@@ -230,6 +230,7 @@ describe('FileCommandLoader', () => {
       },
     });
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getProjectRoot: vi.fn(() => '/path/to/project'),
       getExtensions: vi.fn(() => []),
       getFolderTrust: vi.fn(() => false),
@@ -275,6 +276,7 @@ describe('FileCommandLoader', () => {
     });
 
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getProjectRoot: vi.fn(() => process.cwd()),
       getExtensions: vi.fn(() => []),
       getFolderTrust: vi.fn(() => false),
@@ -561,6 +563,7 @@ describe('FileCommandLoader', () => {
       });
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => process.cwd()),
         getExtensions: vi.fn(() => [
           {
@@ -616,6 +619,7 @@ describe('FileCommandLoader', () => {
       });
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => process.cwd()),
         getExtensions: vi.fn(() => [
           {
@@ -723,6 +727,7 @@ describe('FileCommandLoader', () => {
       });
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => process.cwd()),
         getExtensions: vi.fn(() => [
           {
@@ -769,6 +774,7 @@ describe('FileCommandLoader', () => {
       });
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => process.cwd()),
         getExtensions: vi.fn(() => [
           {
@@ -813,6 +819,7 @@ describe('FileCommandLoader', () => {
       });
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => process.cwd()),
         getExtensions: vi.fn(() => [
           { name: 'a', version: '1.0.0', isActive: true, path: extensionDir },
@@ -874,6 +881,7 @@ describe('FileCommandLoader', () => {
       });
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => process.cwd()),
         getExtensions: vi.fn(() => [
           {
@@ -1256,6 +1264,7 @@ describe('FileCommandLoader', () => {
   describe('with folder trust enabled', () => {
     it('loads multiple commands', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => '/path/to/project'),
         getExtensions: vi.fn(() => []),
         getFolderTrust: vi.fn(() => true),
@@ -1277,6 +1286,7 @@ describe('FileCommandLoader', () => {
 
     it('does not load when folder is not trusted', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => '/path/to/project'),
         getExtensions: vi.fn(() => []),
         getFolderTrust: vi.fn(() => true),
@@ -1307,6 +1317,7 @@ describe('FileCommandLoader', () => {
         .mockImplementation(() => {});
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getProjectRoot: vi.fn(() => '/path/to/project'),
         getExtensions: vi.fn(() => []),
         getFolderTrust: vi.fn(() => false),

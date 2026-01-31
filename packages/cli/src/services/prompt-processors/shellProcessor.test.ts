@@ -74,6 +74,7 @@ describe('ShellProcessor', () => {
     });
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: vi.fn().mockReturnValue('/test/dir'),
       getApprovalMode: vi.fn().mockReturnValue(ApprovalMode.DEFAULT),
       getEnableInteractiveShell: vi.fn().mockReturnValue(false),

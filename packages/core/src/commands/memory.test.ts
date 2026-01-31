@@ -25,6 +25,7 @@ describe('memory commands', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getUserMemory: vi.fn(),
       getGeminiMdFileCount: vi.fn(),
       getGeminiMdFilePaths: vi.fn(),

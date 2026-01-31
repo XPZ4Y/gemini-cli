@@ -39,6 +39,7 @@ describe('listSessions', () => {
   beforeEach(() => {
     // Create mock config
     mockConfig = {
+      getDisableLoopDetection: () => false,
       storage: {
         getProjectTempDir: vi.fn().mockReturnValue('/tmp/test-project'),
       },
@@ -339,6 +340,7 @@ describe('deleteSession', () => {
   beforeEach(() => {
     // Create mock config
     mockConfig = {
+      getDisableLoopDetection: () => false,
       storage: {
         getProjectTempDir: vi.fn().mockReturnValue('/tmp/test-project'),
       },

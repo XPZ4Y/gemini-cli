@@ -36,7 +36,7 @@ describe('CompositeStrategy', () => {
     vi.clearAllMocks();
 
     mockContext = {} as RoutingContext;
-    mockConfig = {} as Config;
+    mockConfig = { getDisableLoopDetection: () => false } as Config;
     mockBaseLlmClient = {} as BaseLlmClient;
 
     emitFeedbackSpy = vi.spyOn(coreEvents, 'emitFeedback');

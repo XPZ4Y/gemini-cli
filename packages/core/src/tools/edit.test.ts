@@ -92,6 +92,7 @@ describe('EditTool', () => {
     fileSystemService = new StandardFileSystemService();
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getUsageStatisticsEnabled: vi.fn(() => true),
       getSessionId: vi.fn(() => 'mock-session-id'),
       getContentGeneratorConfig: vi.fn(() => ({ authType: 'mock' })),

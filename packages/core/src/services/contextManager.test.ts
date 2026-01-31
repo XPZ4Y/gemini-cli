@@ -31,6 +31,7 @@ describe('ContextManager', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getDebugMode: vi.fn().mockReturnValue(false),
       getWorkingDir: vi.fn().mockReturnValue('/app'),
       getWorkspaceContext: vi.fn().mockReturnValue({

@@ -62,6 +62,7 @@ describe('checkNextSpeaker', () => {
       generateContentConfig: {},
     };
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getProjectRoot: vi.fn().mockReturnValue('/test/project/root'),
       getSessionId: vi.fn().mockReturnValue('test-session-id'),
       getModel: () => 'test-model',

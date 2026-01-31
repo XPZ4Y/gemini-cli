@@ -144,6 +144,7 @@ describe('Scheduler (Orchestrator)', () => {
     } as unknown as Mocked<ToolRegistry>;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getPolicyEngine: vi.fn().mockReturnValue(mockPolicyEngine),
       getToolRegistry: vi.fn().mockReturnValue(mockToolRegistry),
       isInteractive: vi.fn().mockReturnValue(true),

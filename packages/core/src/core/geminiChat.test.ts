@@ -126,6 +126,7 @@ describe('GeminiChat', () => {
     let currentActiveModel = 'gemini-pro';
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryLogPromptsEnabled: () => true,
       getUsageStatisticsEnabled: () => true,

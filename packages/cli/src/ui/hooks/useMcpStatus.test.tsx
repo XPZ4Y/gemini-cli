@@ -29,6 +29,7 @@ describe('useMcpStatus', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getMcpClientManager: vi.fn().mockReturnValue(mockMcpClientManager),
     } as unknown as Config;
   });

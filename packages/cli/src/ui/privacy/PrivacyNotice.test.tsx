@@ -38,6 +38,7 @@ vi.mock('./CloudFreePrivacyNotice.js', async () => {
 describe('PrivacyNotice', () => {
   const onExit = vi.fn();
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getContentGeneratorConfig: vi.fn(),
   } as unknown as Config;
 

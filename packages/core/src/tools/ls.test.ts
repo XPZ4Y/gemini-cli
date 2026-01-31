@@ -36,6 +36,7 @@ describe('LSTool', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => tempRootDir,
       getWorkspaceContext: () =>
         new WorkspaceContext(tempRootDir, [tempSecondaryDir]),

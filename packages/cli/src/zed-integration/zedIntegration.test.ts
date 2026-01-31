@@ -91,6 +91,7 @@ describe('GeminiAgent', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       refreshAuth: vi.fn(),
       initialize: vi.fn(),
       getFileSystemService: vi.fn(),
@@ -292,6 +293,7 @@ describe('Session', () => {
       unsubscribe: vi.fn(),
     } as unknown as Mocked<MessageBus>;
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue('gemini-pro'),
       getPreviewFeatures: vi.fn().mockReturnValue({}),
       getToolRegistry: vi.fn().mockReturnValue(mockToolRegistry),

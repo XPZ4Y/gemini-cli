@@ -31,6 +31,7 @@ describe('LoginWithGoogleRestartDialog', () => {
     .mockImplementation(() => undefined as never);
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getRemoteAdminSettings: vi.fn(),
   } as unknown as Config;
 

@@ -124,6 +124,7 @@ describe('useAuth', () => {
 
   describe('useAuthCommand', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       refreshAuth: vi.fn(),
     } as unknown as Config;
 

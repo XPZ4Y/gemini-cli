@@ -165,6 +165,7 @@ describe('runNonInteractive', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       initialize: vi.fn().mockResolvedValue(undefined),
       getMessageBus: vi.fn().mockReturnValue({
         subscribe: vi.fn(),

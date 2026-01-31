@@ -42,6 +42,7 @@ describe('restoreCommand', () => {
     } as unknown as GitService;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getCheckpointingEnabled: vi.fn().mockReturnValue(true),
       storage: {
         getProjectTempCheckpointsDir: vi.fn().mockReturnValue(checkpointsDir),

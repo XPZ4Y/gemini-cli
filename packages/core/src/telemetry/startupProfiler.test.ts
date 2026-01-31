@@ -61,6 +61,7 @@ describe('StartupProfiler', () => {
     performance.clearMeasures();
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
     } as unknown as Config;

@@ -26,6 +26,7 @@ vi.mock('./ToolResultDisplay.js', () => ({
 
 describe('Focus Hint', () => {
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getEnableInteractiveShell: () => true,
   } as Config;
 

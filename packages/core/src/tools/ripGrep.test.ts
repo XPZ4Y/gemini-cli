@@ -250,6 +250,7 @@ describe('RipGrepTool', () => {
   const abortSignal = new AbortController().signal;
 
   let mockConfig = {
+    getDisableLoopDetection: () => false,
     getTargetDir: () => tempRootDir,
     getWorkspaceContext: () => createMockWorkspaceContext(tempRootDir),
     getDebugMode: () => false,
@@ -274,6 +275,7 @@ describe('RipGrepTool', () => {
     tempRootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'grep-tool-root-'));
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => tempRootDir,
       getWorkspaceContext: () => createMockWorkspaceContext(tempRootDir),
       getDebugMode: () => false,

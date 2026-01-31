@@ -28,6 +28,7 @@ describe('useToolScheduler (Facade)', () => {
 
   it('delegates to useReactToolScheduler when event-driven scheduler is disabled', () => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       isEventDrivenSchedulerEnabled: () => false,
     } as unknown as Config;
 
@@ -49,6 +50,7 @@ describe('useToolScheduler (Facade)', () => {
 
   it('delegates to useToolExecutionScheduler when event-driven scheduler is enabled', () => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       isEventDrivenSchedulerEnabled: () => true,
     } as unknown as Config;
 

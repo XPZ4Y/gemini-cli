@@ -45,6 +45,7 @@ describe('ActivityMonitor', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-123',
     } as Config;
     activityMonitor = new ActivityMonitor();
@@ -249,6 +250,7 @@ describe('Global activity monitoring functions', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-456',
     } as Config;
     vi.clearAllMocks();

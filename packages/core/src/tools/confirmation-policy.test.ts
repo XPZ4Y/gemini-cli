@@ -47,6 +47,7 @@ describe('Tool Confirmation Policy Updates', () => {
     } as unknown as MessageBus;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => rootDir,
       getApprovalMode: vi.fn().mockReturnValue(ApprovalMode.DEFAULT),
       setApprovalMode: vi.fn(),

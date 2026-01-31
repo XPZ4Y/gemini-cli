@@ -21,6 +21,7 @@ describe('ContextBuilder', () => {
   beforeEach(() => {
     vi.spyOn(process, 'cwd').mockReturnValue(mockCwd);
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getWorkspaceContext: vi.fn().mockReturnValue({
         getDirectories: vi.fn().mockReturnValue(mockWorkspaces),
       }),

@@ -543,6 +543,7 @@ describe('gemini.tsx main function kitty protocol', () => {
     } as any); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       isInteractive: () => false,
       getQuestion: () => '',
       getSandbox: () => false,
@@ -633,6 +634,7 @@ describe('gemini.tsx main function kitty protocol', () => {
     );
 
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       isInteractive: () => false,
       getQuestion: () => '',
       getSandbox: () => true,
@@ -1415,6 +1417,7 @@ describe('validateDnsResolutionOrder', () => {
 describe('startInteractiveUI', () => {
   // Mock dependencies
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getProjectRoot: () => '/root',
     getScreenReader: () => false,
     getDebugMode: () => false,

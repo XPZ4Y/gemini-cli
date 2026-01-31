@@ -63,6 +63,7 @@ describe('directoryCommand', () => {
     } as unknown as WorkspaceContext;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getWorkspaceContext: () => mockWorkspaceContext,
       isRestrictiveSandbox: vi.fn().mockReturnValue(false),
       getGeminiClient: vi.fn().mockReturnValue({

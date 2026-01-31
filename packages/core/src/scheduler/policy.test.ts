@@ -28,6 +28,7 @@ describe('policy.ts', () => {
       } as unknown as Mocked<PolicyEngine>;
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getPolicyEngine: vi.fn().mockReturnValue(mockPolicyEngine),
       } as unknown as Mocked<Config>;
 
@@ -50,6 +51,7 @@ describe('policy.ts', () => {
       } as unknown as Mocked<PolicyEngine>;
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getPolicyEngine: vi.fn().mockReturnValue(mockPolicyEngine),
       } as unknown as Mocked<Config>;
 
@@ -74,6 +76,7 @@ describe('policy.ts', () => {
       } as unknown as Mocked<PolicyEngine>;
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getPolicyEngine: vi.fn().mockReturnValue(mockPolicyEngine),
         isInteractive: vi.fn().mockReturnValue(false),
       } as unknown as Mocked<Config>;
@@ -94,6 +97,7 @@ describe('policy.ts', () => {
       } as unknown as Mocked<PolicyEngine>;
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getPolicyEngine: vi.fn().mockReturnValue(mockPolicyEngine),
       } as unknown as Mocked<Config>;
 
@@ -112,6 +116,7 @@ describe('policy.ts', () => {
       } as unknown as Mocked<PolicyEngine>;
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getPolicyEngine: vi.fn().mockReturnValue(mockPolicyEngine),
         isInteractive: vi.fn().mockReturnValue(true),
       } as unknown as Mocked<Config>;
@@ -129,6 +134,7 @@ describe('policy.ts', () => {
   describe('updatePolicy', () => {
     it('should set AUTO_EDIT mode for auto-edit transition tools', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -152,6 +158,7 @@ describe('policy.ts', () => {
 
     it('should handle standard policy updates (persist=false)', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -177,6 +184,7 @@ describe('policy.ts', () => {
 
     it('should handle standard policy updates with persistence', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -202,6 +210,7 @@ describe('policy.ts', () => {
 
     it('should handle shell command prefixes', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -233,6 +242,7 @@ describe('policy.ts', () => {
 
     it('should handle MCP policy updates (server scope)', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -267,6 +277,7 @@ describe('policy.ts', () => {
 
     it('should NOT publish update for ProceedOnce', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -285,6 +296,7 @@ describe('policy.ts', () => {
 
     it('should NOT publish update for Cancel', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -302,6 +314,7 @@ describe('policy.ts', () => {
 
     it('should NOT publish update for ModifyWithEditor', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -321,6 +334,7 @@ describe('policy.ts', () => {
 
     it('should handle MCP ProceedAlwaysTool (specific tool name)', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -355,6 +369,7 @@ describe('policy.ts', () => {
 
     it('should handle MCP ProceedAlways (persist: false)', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {
@@ -387,6 +402,7 @@ describe('policy.ts', () => {
 
     it('should handle MCP ProceedAlwaysAndSave (persist: true)', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setApprovalMode: vi.fn(),
       } as unknown as Mocked<Config>;
       const mockMessageBus = {

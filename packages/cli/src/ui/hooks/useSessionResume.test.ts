@@ -24,6 +24,7 @@ describe('useSessionResume', () => {
   };
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getGeminiClient: vi.fn().mockReturnValue(mockGeminiClient),
   };
 

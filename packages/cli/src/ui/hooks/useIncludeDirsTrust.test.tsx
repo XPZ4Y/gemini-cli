@@ -69,6 +69,7 @@ describe('useIncludeDirsTrust', () => {
     } as unknown as ReturnType<typeof mockConfig.getWorkspaceContext>;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getPendingIncludeDirectories: vi.fn().mockReturnValue([]),
       clearPendingIncludeDirectories: vi.fn(),
       getFolderTrust: vi.fn().mockReturnValue(true),

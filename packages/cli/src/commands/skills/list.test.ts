@@ -58,6 +58,7 @@ describe('skills list command', () => {
   describe('handleList', () => {
     it('should log a message if no skills are discovered', async () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         initialize: vi.fn().mockResolvedValue(undefined),
         getSkillManager: vi.fn().mockReturnValue({
           getAllSkills: vi.fn().mockReturnValue([]),
@@ -89,6 +90,7 @@ describe('skills list command', () => {
         },
       ];
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         initialize: vi.fn().mockResolvedValue(undefined),
         getSkillManager: vi.fn().mockReturnValue({
           getAllSkills: vi.fn().mockReturnValue(skills),
@@ -137,6 +139,7 @@ describe('skills list command', () => {
         },
       ];
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         initialize: vi.fn().mockResolvedValue(undefined),
         getSkillManager: vi.fn().mockReturnValue({
           getAllSkills: vi.fn().mockReturnValue(skills),

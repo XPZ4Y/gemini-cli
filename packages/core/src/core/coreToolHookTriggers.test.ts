@@ -55,6 +55,7 @@ describe('executeToolWithHooks', () => {
       fireAfterToolEvent: vi.fn(),
     } as unknown as HookSystem;
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getHookSystem: vi.fn().mockReturnValue(mockHookSystem),
       getMcpClientManager: vi.fn().mockReturnValue(undefined),
       getMcpServers: vi.fn().mockReturnValue({}),

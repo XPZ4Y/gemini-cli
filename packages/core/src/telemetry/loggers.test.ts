@@ -189,6 +189,7 @@ describe('loggers', () => {
   describe('logCliConfiguration', () => {
     it('should log the cli configuration', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getSessionId: () => 'test-session-id',
         getModel: () => 'test-model',
         getEmbeddingModel: () => 'test-embedding-model',
@@ -266,6 +267,7 @@ describe('loggers', () => {
 
   describe('logUserPrompt', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryEnabled: () => true,
       getTelemetryLogPromptsEnabled: () => true,
@@ -302,6 +304,7 @@ describe('loggers', () => {
 
     it('should not log prompt if disabled', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getSessionId: () => 'test-session-id',
         getTelemetryEnabled: () => true,
         getTelemetryLogPromptsEnabled: () => false,
@@ -337,6 +340,7 @@ describe('loggers', () => {
 
   describe('logApiResponse', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTargetDir: () => 'target-dir',
       getUsageStatisticsEnabled: () => true,
@@ -513,6 +517,7 @@ describe('loggers', () => {
 
   describe('logApiError', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTargetDir: () => 'target-dir',
       getUsageStatisticsEnabled: () => true,
@@ -645,6 +650,7 @@ describe('loggers', () => {
 
   describe('logApiRequest', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTargetDir: () => 'target-dir',
       getUsageStatisticsEnabled: () => true,
@@ -863,6 +869,7 @@ describe('loggers', () => {
 
     it('should correctly derive model from prompt details if available in semantic log', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getSessionId: () => 'test-session-id',
         getTelemetryEnabled: () => true,
         getTelemetryLogPromptsEnabled: () => true,
@@ -900,6 +907,7 @@ describe('loggers', () => {
 
   describe('logFlashFallback', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -927,6 +935,7 @@ describe('loggers', () => {
 
   describe('logRipgrepFallback', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -1017,6 +1026,7 @@ describe('loggers', () => {
 
     const mockGeminiClient = new GeminiClient(cfg2);
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTargetDir: () => 'target-dir',
       getGeminiClient: () => mockGeminiClient,
@@ -1588,6 +1598,7 @@ describe('loggers', () => {
 
   describe('logFileOperation', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTargetDir: () => 'target-dir',
       getUsageStatisticsEnabled: () => true,
@@ -1651,6 +1662,7 @@ describe('loggers', () => {
 
   describe('logToolOutputTruncated', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -1690,6 +1702,7 @@ describe('loggers', () => {
 
   describe('logModelRouting', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -1758,6 +1771,7 @@ describe('loggers', () => {
 
   describe('logExtensionInstall', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       getContentGeneratorConfig: () => null,
@@ -1808,6 +1822,7 @@ describe('loggers', () => {
 
   describe('logExtensionUpdate', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       getContentGeneratorConfig: () => null,
@@ -1860,6 +1875,7 @@ describe('loggers', () => {
 
   describe('logExtensionUninstall', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       getContentGeneratorConfig: () => null,
@@ -1905,6 +1921,7 @@ describe('loggers', () => {
 
   describe('logExtensionEnable', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -1950,6 +1967,7 @@ describe('loggers', () => {
 
   describe('logExtensionDisable', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -1995,6 +2013,7 @@ describe('loggers', () => {
 
   describe('logAgentStart', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -2031,6 +2050,7 @@ describe('loggers', () => {
 
   describe('logAgentFinish', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -2082,6 +2102,7 @@ describe('loggers', () => {
 
   describe('logWebFetchFallbackAttempt', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,
@@ -2117,6 +2138,7 @@ describe('loggers', () => {
 
   describe('logHookCall', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getUsageStatisticsEnabled: () => true,
       isInteractive: () => false,

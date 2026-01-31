@@ -61,6 +61,7 @@ const mockProcessUptime = vi.mocked(process.uptime);
 
 // Mock config object
 const mockConfig = {
+  getDisableLoopDetection: () => false,
   getSessionId: () => 'test-session-id',
   getTelemetryEnabled: () => true,
 } as unknown as Config;

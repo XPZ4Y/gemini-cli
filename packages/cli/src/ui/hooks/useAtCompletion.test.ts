@@ -46,6 +46,7 @@ describe('useAtCompletion', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getFileFilteringOptions: vi.fn(() => ({
         respectGitIgnore: true,
         respectGeminiIgnore: true,

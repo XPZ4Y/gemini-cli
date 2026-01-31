@@ -952,6 +952,7 @@ included directory memory
 
   it('should include MCP instructions in user memory', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getWorkingDir: vi.fn().mockReturnValue(cwd),
       shouldLoadMemoryFromIncludeDirectories: vi.fn().mockReturnValue(false),
       getDebugMode: vi.fn().mockReturnValue(false),

@@ -60,6 +60,7 @@ const mockToolRegistry = {
 };
 
 const mockConfig = {
+  getDisableLoopDetection: () => false,
   getToolRegistry: vi.fn(() => mockToolRegistry as unknown as ToolRegistry),
   getApprovalMode: vi.fn(() => ApprovalMode.DEFAULT),
   getSessionId: () => 'test-session-id',

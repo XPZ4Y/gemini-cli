@@ -57,6 +57,7 @@ describe('useAtCompletion with Agents', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getFileFilteringOptions: vi.fn(() => ({
         respectGitIgnore: true,
         respectGeminiIgnore: true,

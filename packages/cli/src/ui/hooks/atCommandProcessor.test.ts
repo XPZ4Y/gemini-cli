@@ -63,6 +63,7 @@ describe('handleAtCommand', () => {
     } as unknown as core.MessageBus;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getToolRegistry,
       getTargetDir: () => testRootDir,
       isSandboxed: () => false,

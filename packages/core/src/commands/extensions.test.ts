@@ -12,6 +12,7 @@ describe('listExtensions', () => {
   it('should call config.getExtensions and return the result', () => {
     const mockExtensions = [{ name: 'ext1' }, { name: 'ext2' }];
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getExtensions: vi.fn().mockReturnValue(mockExtensions),
     } as unknown as Config;
 

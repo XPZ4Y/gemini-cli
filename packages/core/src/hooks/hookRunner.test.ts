@@ -68,6 +68,7 @@ describe('HookRunner', () => {
     vi.resetAllMocks();
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       isTrustedFolder: vi.fn().mockReturnValue(true),
       sanitizationConfig: {
         enableEnvironmentVariableRedaction: true,

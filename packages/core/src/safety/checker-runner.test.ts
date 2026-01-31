@@ -129,7 +129,10 @@ describe('CheckerRunner', () => {
   });
 
   it('should pass config to in-process checker via toolCall', async () => {
-    const mockConfig = { included_args: ['foo'] };
+    const mockConfig = {
+      getDisableLoopDetection: () => false,
+      included_args: ['foo'],
+    };
     const configWithConfig: InProcessCheckerConfig = {
       ...mockInProcessConfig,
       config: mockConfig,

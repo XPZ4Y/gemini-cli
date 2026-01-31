@@ -60,6 +60,7 @@ describe('Core System Prompt (prompts.ts)', () => {
     vi.stubEnv('GEMINI_SYSTEM_MD', undefined);
     vi.stubEnv('GEMINI_WRITE_SYSTEM_MD', undefined);
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getToolRegistry: vi.fn().mockReturnValue({
         getAllToolNames: vi.fn().mockReturnValue([]),
       }),

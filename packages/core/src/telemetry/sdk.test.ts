@@ -65,6 +65,7 @@ describe('Telemetry SDK', () => {
         }) as unknown as GoogleAuth,
     );
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTelemetryEnabled: () => true,
       getTelemetryOtlpEndpoint: () => 'http://localhost:4317',
       getTelemetryOtlpProtocol: () => 'grpc',

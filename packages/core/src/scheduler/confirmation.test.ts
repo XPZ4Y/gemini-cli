@@ -140,6 +140,7 @@ describe('confirmation.ts', () => {
         fireToolNotificationEvent: vi.fn().mockResolvedValue(undefined),
       };
       mockConfig = {
+        getDisableLoopDetection: () => false,
         getEnableHooks: vi.fn().mockReturnValue(true),
         getHookSystem: vi.fn().mockReturnValue(mockHookSystem),
       } as unknown as Mocked<Config>;

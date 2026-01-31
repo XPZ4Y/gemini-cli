@@ -32,6 +32,7 @@ describe('getDirectoryContextString', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getWorkspaceContext: vi.fn().mockReturnValue({
         getDirectories: vi.fn().mockReturnValue(['/test/dir']),
       }),
@@ -88,6 +89,7 @@ describe('getEnvironmentContext', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getWorkspaceContext: vi.fn().mockReturnValue({
         getDirectories: vi.fn().mockReturnValue(['/test/dir']),
       }),

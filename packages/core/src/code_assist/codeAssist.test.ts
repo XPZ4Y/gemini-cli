@@ -37,6 +37,7 @@ describe('codeAssist', () => {
     const httpOptions = {};
     const mockValidationHandler = vi.fn();
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getValidationHandler: () => mockValidationHandler,
     } as unknown as Config;
     const mockAuthClient = { a: 'client' };
@@ -119,6 +120,7 @@ describe('codeAssist', () => {
     it('should return the server if it is a CodeAssistServer', () => {
       const mockServer = new MockedCodeAssistServer({} as never, '', {});
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getContentGenerator: () => mockServer,
       } as unknown as Config;
 
@@ -135,6 +137,7 @@ describe('codeAssist', () => {
       vi.spyOn(mockLogger, 'getWrapped').mockReturnValue(mockServer);
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getContentGenerator: () => mockLogger,
       } as unknown as Config;
 
@@ -146,6 +149,7 @@ describe('codeAssist', () => {
     it('should return undefined if the content generator is not a CodeAssistServer', () => {
       const mockGenerator = { a: 'generator' }; // Not a CodeAssistServer
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getContentGenerator: () => mockGenerator,
       } as unknown as Config;
 
@@ -164,6 +168,7 @@ describe('codeAssist', () => {
       );
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getContentGenerator: () => mockLogger,
       } as unknown as Config;
 

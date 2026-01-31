@@ -171,6 +171,7 @@ describe('ChatCompressionService', () => {
       } as unknown as GenerateContentResponse);
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getCompressionThreshold: vi.fn(),
       getBaseLlmClient: vi.fn().mockReturnValue({
         generateContent: mockGenerateContent,

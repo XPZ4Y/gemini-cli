@@ -30,7 +30,7 @@ const mockedUseKeypress = useKeypress as Mock;
 const mockedRadioButtonSelect = RadioButtonSelect as Mock;
 
 describe('CloudFreePrivacyNotice', () => {
-  const mockConfig = {} as Config;
+  const mockConfig = { getDisableLoopDetection: () => false } as Config;
   const onExit = vi.fn();
   const updateDataCollectionOptIn = vi.fn();
 

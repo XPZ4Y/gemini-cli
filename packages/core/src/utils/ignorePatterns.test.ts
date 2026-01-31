@@ -148,6 +148,7 @@ describe('FileExclusions', () => {
   describe('with Config', () => {
     it('should use config custom excludes when available', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getCustomExcludes: vi.fn(() => ['**/config-exclude/**']),
       } as unknown as Config;
 
@@ -159,7 +160,7 @@ describe('FileExclusions', () => {
     });
 
     it('should handle config without getCustomExcludes method', () => {
-      const mockConfig = {} as Config;
+      const mockConfig = { getDisableLoopDetection: () => false } as Config;
 
       const excluder = new FileExclusions(mockConfig);
       const patterns = excluder.getDefaultExcludePatterns();
@@ -171,6 +172,7 @@ describe('FileExclusions', () => {
 
     it('should include config custom excludes in glob patterns', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getCustomExcludes: vi.fn(() => ['**/config-glob/**']),
       } as unknown as Config;
 

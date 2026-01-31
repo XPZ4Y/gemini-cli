@@ -139,6 +139,7 @@ describe('errors', () => {
 
     // Create mock config
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getOutputFormat: vi.fn().mockReturnValue(OutputFormat.TEXT),
       getContentGeneratorConfig: vi.fn().mockReturnValue({ authType: 'test' }),
       getSessionId: vi.fn().mockReturnValue(TEST_SESSION_ID),

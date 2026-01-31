@@ -49,7 +49,7 @@ const mockMeasureElement = measureElement as Mock;
 const mockAppEventsEmit = appEvents.emit as Mock;
 
 describe('useFlickerDetector', () => {
-  const mockConfig = {} as Config;
+  const mockConfig = { getDisableLoopDetection: () => false } as Config;
   let mockRef: React.RefObject<DOMElement | null>;
 
   beforeEach(() => {

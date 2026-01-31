@@ -33,7 +33,7 @@ const mockPrompt = {
 };
 
 describe('McpPromptLoader', () => {
-  const mockConfig = {} as Config;
+  const mockConfig = { getDisableLoopDetection: () => false } as Config;
 
   // Use a beforeEach to set up and clean a spy for each test
   beforeEach(() => {

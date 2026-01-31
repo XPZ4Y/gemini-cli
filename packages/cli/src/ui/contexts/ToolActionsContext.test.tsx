@@ -35,6 +35,7 @@ describe('ToolActionsContext', () => {
   };
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     getIdeMode: vi.fn().mockReturnValue(false),
     getMessageBus: vi.fn().mockReturnValue(mockMessageBus),
   } as unknown as Config;

@@ -30,6 +30,7 @@ describe('AtFileProcessor', () => {
     vi.clearAllMocks();
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       // The processor only passes the config through, so we don't need a full mock.
     } as unknown as Config;
 

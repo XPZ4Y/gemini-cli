@@ -18,6 +18,7 @@ describe('OverrideStrategy', () => {
 
   it('should return null when the override model is auto', async () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: () => DEFAULT_GEMINI_MODEL_AUTO,
       getPreviewFeatures: () => false,
     } as Config;
@@ -29,6 +30,7 @@ describe('OverrideStrategy', () => {
   it('should return a decision with the override model when one is specified', async () => {
     const overrideModel = 'gemini-2.5-pro-custom';
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: () => overrideModel,
       getPreviewFeatures: () => false,
     } as Config;
@@ -47,6 +49,7 @@ describe('OverrideStrategy', () => {
   it('should handle different override model names', async () => {
     const overrideModel = 'gemini-2.5-flash-experimental';
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: () => overrideModel,
       getPreviewFeatures: () => false,
     } as Config;
@@ -61,6 +64,7 @@ describe('OverrideStrategy', () => {
     const requestedModel = 'requested-model';
     const configModel = 'config-model';
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: () => configModel,
       getPreviewFeatures: () => false,
     } as Config;

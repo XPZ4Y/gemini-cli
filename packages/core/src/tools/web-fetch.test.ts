@@ -137,6 +137,7 @@ describe('WebFetchTool', () => {
     bus = createMockMessageBus();
     getMockMessageBusInstance(bus).defaultToolDecision = 'ask_user';
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getApprovalMode: vi.fn(),
       setApprovalMode: vi.fn(),
       getProxy: vi.fn(),

@@ -29,6 +29,7 @@ describe('agent-scheduler', () => {
       getTool: vi.fn(),
     } as unknown as Mocked<ToolRegistry>;
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getMessageBus: vi.fn().mockReturnValue(mockMessageBus),
       getToolRegistry: vi.fn().mockReturnValue(mockToolRegistry),
     } as unknown as Mocked<Config>;

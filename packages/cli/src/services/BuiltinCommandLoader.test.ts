@@ -114,6 +114,7 @@ describe('BuiltinCommandLoader', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getFolderTrust: vi.fn().mockReturnValue(true),
       getEnableExtensionReloading: () => false,
       getEnableHooks: () => false,
@@ -255,6 +256,7 @@ describe('BuiltinCommandLoader profile', () => {
   beforeEach(() => {
     vi.resetModules();
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getFolderTrust: vi.fn().mockReturnValue(false),
       getCheckpointingEnabled: () => false,
       getEnableExtensionReloading: () => false,

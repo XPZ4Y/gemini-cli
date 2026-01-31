@@ -28,6 +28,7 @@ describe('getMCPServerPrompts', () => {
     vi.spyOn(mockRegistry, 'getPromptsByServer').mockReturnValue(mockPrompts);
 
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getPromptRegistry: () => mockRegistry,
     } as unknown as Config;
 
@@ -39,6 +40,7 @@ describe('getMCPServerPrompts', () => {
 
   it('should return an empty array if there is no prompt registry', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getPromptRegistry: () => undefined,
     } as unknown as Config;
 

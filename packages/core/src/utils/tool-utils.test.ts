@@ -85,6 +85,7 @@ describe('doesToolInvocationMatch', () => {
 
   describe('for non-shell tools', () => {
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => '/tmp',
       getFileFilteringOptions: () => ({}),
     } as unknown as Config;

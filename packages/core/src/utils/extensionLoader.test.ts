@@ -66,6 +66,7 @@ describe('SimpleExtensionLoader', () => {
     mockHookSystemInit = vi.fn();
     mockAgentRegistryReload = vi.fn();
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getMcpClientManager: () => mockMcpClientManager,
       getEnableExtensionReloading: () => extensionReloadingEnabled,
       getGeminiClient: vi.fn(() => ({

@@ -145,6 +145,7 @@ describe('WriteFileTool', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       ...mockConfigInternal,
       getWorkspaceContext: () => workspaceContext,
       storage: mockStorage,

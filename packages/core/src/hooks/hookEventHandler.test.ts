@@ -64,6 +64,7 @@ describe('HookEventHandler', () => {
     vi.resetAllMocks();
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: vi.fn().mockReturnValue('test-session'),
       getWorkingDir: vi.fn().mockReturnValue('/test/project'),
       getGeminiClient: vi.fn().mockReturnValue({

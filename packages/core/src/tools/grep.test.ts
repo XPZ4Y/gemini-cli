@@ -49,6 +49,7 @@ describe('GrepTool', () => {
     tempRootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'grep-tool-root-'));
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => tempRootDir,
       getWorkspaceContext: () => createMockWorkspaceContext(tempRootDir),
       getFileExclusions: () => ({

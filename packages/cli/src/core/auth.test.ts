@@ -26,6 +26,7 @@ describe('auth', () => {
 
   beforeEach(() => {
     mockConfig = {
+      getDisableLoopDetection: () => false,
       refreshAuth: vi.fn(),
     } as unknown as Config;
   });

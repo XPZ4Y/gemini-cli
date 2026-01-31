@@ -63,6 +63,7 @@ describe('handleAtCommand with Agents', () => {
     };
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getToolRegistry,
       getTargetDir: () => testRootDir,
       isSandboxed: () => false,

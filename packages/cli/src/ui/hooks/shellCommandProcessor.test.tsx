@@ -105,6 +105,7 @@ describe('useShellCommandProcessor', () => {
     onDebugMessageMock = vi.fn();
     setShellInputFocusedMock = vi.fn();
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => '/test/dir',
       getEnableInteractiveShell: () => false,
       getShellExecutionConfig: () => ({

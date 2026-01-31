@@ -56,6 +56,7 @@ describe('sessionSummaryUtils', () => {
 
     // Setup mock config
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getContentGenerator: vi.fn().mockReturnValue(mockContentGenerator),
       storage: {
         getProjectTempDir: vi.fn().mockReturnValue('/tmp/project'),

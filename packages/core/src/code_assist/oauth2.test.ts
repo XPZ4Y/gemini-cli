@@ -84,6 +84,7 @@ vi.mock('./oauth-credential-storage.js', () => ({
 }));
 
 const mockConfig = {
+  getDisableLoopDetection: () => false,
   getNoBrowser: () => false,
   getProxy: () => 'http://test.proxy.com:8080',
   isBrowserLaunchSuppressed: () => false,

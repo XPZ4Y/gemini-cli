@@ -36,6 +36,7 @@ describe('ToolConfirmationMessage', () => {
   });
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     isTrustedFolder: () => true,
     getIdeMode: () => false,
   } as unknown as Config;
@@ -177,6 +178,7 @@ describe('ToolConfirmationMessage', () => {
     ])('$description', ({ details }) => {
       it('should show "allow always" when folder is trusted', () => {
         const mockConfig = {
+          getDisableLoopDetection: () => false,
           isTrustedFolder: () => true,
           getIdeMode: () => false,
         } as unknown as Config;
@@ -196,6 +198,7 @@ describe('ToolConfirmationMessage', () => {
 
       it('should NOT show "allow always" when folder is untrusted', () => {
         const mockConfig = {
+          getDisableLoopDetection: () => false,
           isTrustedFolder: () => false,
           getIdeMode: () => false,
         } as unknown as Config;
@@ -229,6 +232,7 @@ describe('ToolConfirmationMessage', () => {
 
     it('should NOT show "Allow for all future sessions" when setting is false (default)', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         isTrustedFolder: () => true,
         getIdeMode: () => false,
       } as unknown as Config;
@@ -253,6 +257,7 @@ describe('ToolConfirmationMessage', () => {
 
     it('should show "Allow for all future sessions" when setting is true', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         isTrustedFolder: () => true,
         getIdeMode: () => false,
       } as unknown as Config;
@@ -290,6 +295,7 @@ describe('ToolConfirmationMessage', () => {
 
     it('should show "Modify with external editor" when NOT in IDE mode', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         isTrustedFolder: () => true,
         getIdeMode: () => false,
       } as unknown as Config;
@@ -315,6 +321,7 @@ describe('ToolConfirmationMessage', () => {
 
     it('should show "Modify with external editor" when in IDE mode but diffing is NOT enabled', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         isTrustedFolder: () => true,
         getIdeMode: () => true,
       } as unknown as Config;
@@ -340,6 +347,7 @@ describe('ToolConfirmationMessage', () => {
 
     it('should NOT show "Modify with external editor" when in IDE mode AND diffing is enabled', () => {
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         isTrustedFolder: () => true,
         getIdeMode: () => true,
       } as unknown as Config;

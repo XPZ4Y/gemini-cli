@@ -100,6 +100,7 @@ describe('BaseLlmClient', () => {
     );
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: vi.fn().mockReturnValue('test-session-id'),
       getContentGeneratorConfig: vi
         .fn()

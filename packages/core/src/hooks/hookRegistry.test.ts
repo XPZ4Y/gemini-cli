@@ -67,6 +67,7 @@ describe('HookRegistry', () => {
     } as unknown as Storage;
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       storage: mockStorage,
       getExtensions: vi.fn().mockReturnValue([]),
       getHooks: vi.fn().mockReturnValue({}),

@@ -15,6 +15,7 @@ import type { ConfirmingToolState } from '../hooks/useConfirmingTool.js';
 
 describe('ToolConfirmationQueue', () => {
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     isTrustedFolder: () => true,
     getIdeMode: () => false,
     getModel: () => 'gemini-pro',

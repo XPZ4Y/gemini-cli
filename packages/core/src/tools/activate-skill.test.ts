@@ -29,6 +29,7 @@ describe('ActivateSkillTool', () => {
       },
     ];
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getWorkspaceContext: vi.fn().mockReturnValue({
         addDirectory: vi.fn(),
       }),

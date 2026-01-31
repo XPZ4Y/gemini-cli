@@ -40,6 +40,7 @@ const mockAddDirectory = vi.fn();
 const mockSetValue = vi.fn();
 
 const mockConfig = {
+  getDisableLoopDetection: () => false,
   getWorkspaceContext: () => ({
     addDirectory: mockAddDirectory,
   }),

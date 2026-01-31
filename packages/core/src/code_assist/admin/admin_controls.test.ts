@@ -385,7 +385,7 @@ describe('Admin Controls', () => {
     let mockConfig: Config;
 
     beforeEach(() => {
-      mockConfig = {} as Config;
+      mockConfig = { getDisableLoopDetection: () => false } as Config;
     });
 
     it('should include feature name and project ID when present', () => {

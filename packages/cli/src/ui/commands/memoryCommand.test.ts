@@ -220,6 +220,7 @@ describe('memoryCommand', () => {
       mockContextManagerRefresh = vi.fn().mockResolvedValue(undefined);
 
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         setUserMemory: mockSetUserMemory,
         setGeminiMdFileCount: mockSetGeminiMdFileCount,
         setGeminiMdFilePaths: mockSetGeminiMdFilePaths,

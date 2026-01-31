@@ -27,6 +27,7 @@ describe('pathCorrector', () => {
     fs.mkdirSync(otherWorkspaceDir, { recursive: true });
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getTargetDir: () => rootDir,
       getWorkspaceContext: () =>
         createMockWorkspaceContext(rootDir, [otherWorkspaceDir]),

@@ -37,6 +37,7 @@ describe('useSessionBrowser', () => {
   const mockedGetSessionFiles = vi.mocked(getSessionFiles);
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     storage: {
       getProjectTempDir: vi.fn(),
     },

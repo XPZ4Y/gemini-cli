@@ -74,6 +74,7 @@ describe('ReadManyFilesTool', () => {
     fs.writeFileSync(path.join(tempRootDir, GEMINI_IGNORE_FILE_NAME), 'foo.*');
     const fileService = new FileDiscoveryService(tempRootDir);
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getFileService: () => fileService,
       getFileSystemService: () => new StandardFileSystemService(),
 
@@ -513,6 +514,7 @@ describe('ReadManyFilesTool', () => {
       );
       const fileService = new FileDiscoveryService(tempDir1);
       const mockConfig = {
+        getDisableLoopDetection: () => false,
         getFileService: () => fileService,
         getFileSystemService: () => new StandardFileSystemService(),
         getFileFilteringOptions: () => ({

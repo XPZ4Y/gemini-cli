@@ -19,6 +19,7 @@ describe('ToolConfirmationMessage Redirection', () => {
   });
 
   const mockConfig = {
+    getDisableLoopDetection: () => false,
     isTrustedFolder: () => true,
     getIdeMode: () => false,
   } as unknown as Config;

@@ -70,6 +70,7 @@ describe('useToolExecutionScheduler', () => {
     vi.clearAllMocks();
     mockMessageBus = createMockMessageBus() as unknown as MessageBus;
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getMessageBus: () => mockMessageBus,
     } as unknown as Config;
   });

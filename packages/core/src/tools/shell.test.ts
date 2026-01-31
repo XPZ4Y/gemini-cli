@@ -96,6 +96,7 @@ describe('ShellTool', () => {
     fs.mkdirSync(path.join(tempRootDir, 'subdir'));
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getAllowedTools: vi.fn().mockReturnValue([]),
       getApprovalMode: vi.fn().mockReturnValue('strict'),
       getCoreTools: vi.fn().mockReturnValue([]),

@@ -47,6 +47,7 @@ describe('ClassifierStrategy', () => {
       generateContentConfig: {},
     } as unknown as ResolvedModelConfig;
     mockConfig = {
+      getDisableLoopDetection: () => false,
       modelConfigService: {
         getResolvedConfig: vi.fn().mockReturnValue(mockResolvedConfig),
       },

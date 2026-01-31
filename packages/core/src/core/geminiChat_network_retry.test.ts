@@ -74,6 +74,7 @@ describe('GeminiChat Network Retries', () => {
     mockRetryWithBackoff.mockImplementation(async (apiCall) => apiCall());
 
     mockConfig = {
+      getDisableLoopDetection: () => false,
       getSessionId: () => 'test-session-id',
       getTelemetryLogPromptsEnabled: () => true,
       getUsageStatisticsEnabled: () => true,

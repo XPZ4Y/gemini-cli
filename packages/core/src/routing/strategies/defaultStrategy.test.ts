@@ -23,6 +23,7 @@ describe('DefaultStrategy', () => {
     const strategy = new DefaultStrategy();
     const mockContext = {} as RoutingContext;
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue(DEFAULT_GEMINI_MODEL_AUTO),
       getPreviewFeatures: vi.fn().mockReturnValue(false),
     } as unknown as Config;
@@ -44,6 +45,7 @@ describe('DefaultStrategy', () => {
     const strategy = new DefaultStrategy();
     const mockContext = {} as RoutingContext;
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue(PREVIEW_GEMINI_MODEL_AUTO),
       getPreviewFeatures: vi.fn().mockReturnValue(false),
     } as unknown as Config;
@@ -65,6 +67,7 @@ describe('DefaultStrategy', () => {
     const strategy = new DefaultStrategy();
     const mockContext = {} as RoutingContext;
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue(GEMINI_MODEL_ALIAS_AUTO),
       getPreviewFeatures: vi.fn().mockReturnValue(true),
     } as unknown as Config;
@@ -86,6 +89,7 @@ describe('DefaultStrategy', () => {
     const strategy = new DefaultStrategy();
     const mockContext = {} as RoutingContext;
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue(GEMINI_MODEL_ALIAS_AUTO),
       getPreviewFeatures: vi.fn().mockReturnValue(false),
     } as unknown as Config;
@@ -108,6 +112,7 @@ describe('DefaultStrategy', () => {
     const strategy = new DefaultStrategy();
     const mockContext = {} as RoutingContext;
     const mockConfig = {
+      getDisableLoopDetection: () => false,
       getModel: vi.fn().mockReturnValue(PREVIEW_GEMINI_FLASH_MODEL),
       getPreviewFeatures: vi.fn().mockReturnValue(false),
     } as unknown as Config;

@@ -138,7 +138,7 @@ describe('ShellToolInvocation Policy Update', () => {
 
   beforeEach(() => {
     vi.resetAllMocks();
-    mockConfig = {} as Config;
+    mockConfig = { getDisableLoopDetection: () => false } as Config;
     mockMessageBus = {} as MessageBus;
 
     vi.mocked(shellUtils.stripShellWrapper).mockImplementation(
